@@ -1,0 +1,10 @@
+{
+  "msglock.lock": "Locked the chat on player %s.",
+  "msglock.unlock": "Unlocked the chat.",
+  "msglock.nounlock": "The chat is already unlocked.",
+  "msglock.relock": "Re-locked the chat from player %s to %s.",
+  "msglock.norelock": "The chat is already locked on player %s.",
+  "msglock.not_online.unlock": "Player %s is not online anymore! The chat is unlocked.",
+  "msglock.not_online.nolock": "Player %s is not online! The chat is not locked.",
+  "msglock.not_online.locked": "Player %s is not online! The chat is still locked on %s."
+}

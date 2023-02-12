@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "msg-lock",
+  "version": "${version}",
+  "name": "Message Lock",
+  "description": "Toggle /msg with /msglock and other aliases, instead of typing it every time!",
+  "authors": [
+    "Andy Russo"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/msg-lock",
+    "sources": "https://github.com/AndyRusso/msg-lock",
+    "issues": "https://github.com/AndyRusso/msg-lock/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/msg-lock/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "io.github.andyrusso.msglock.MsgLock"
+      }
+    ]
+  },
+  "mixins": [
+    "msg-lock.mixins.json"
+  ],
+  "accessWidener": "msg-lock.accesswidener",
+  "depends": {
+    "fabric": ">=0.55.2",
+    "fabricloader": ">=0.13.0",
+    "fabric-language-kotlin": ">=1.7.2+kotlin.1.6.20",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  }
+}

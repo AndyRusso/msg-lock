@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "io.github.andyrusso.msglock.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "MixinChatScreen",
+    "MixinMinecraftClient"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

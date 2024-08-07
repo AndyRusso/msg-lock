@@ -6,4 +6,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "MsgLock"
+rootProject.name = "Msg-lock"

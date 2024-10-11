@@ -17,7 +17,7 @@ import net.minecraft.command.argument.EntityArgumentType
 import net.minecraft.sound.SoundCategory
 import net.minecraft.sound.SoundEvents
 import net.minecraft.text.Text
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo
 
 class MsgLock : ClientModInitializer {
 
@@ -51,7 +51,7 @@ class MsgLock : ClientModInitializer {
         }
 
         @JvmStatic
-        fun cancelSendMessage(chatText: String, cir: CallbackInfoReturnable<Boolean>) {
+        fun cancelSendMessage(chatText: String, ci: CallbackInfo) {
             if (player != null && !isOnline(player!!) && !stripIfGenerated(chatText).startsWith("/")) {
                 val chatHud: ChatHud = MinecraftClient.getInstance().inGameHud.chatHud
                 chatHud.addToMessageHistory(stripIfGenerated(chatText))
@@ -70,7 +70,7 @@ class MsgLock : ClientModInitializer {
                         client.player?.z ?: 0.0,
                     )
                 client.soundManager.play(sound)
-                cir.returnValue = true
+                ci.cancel()
             }
         }
 

@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ChatScreen.class)
 public class MixinChatScreen {
@@ -17,8 +17,8 @@ public class MixinChatScreen {
     }
 
     @Inject(method = "sendMessage", at = @At(value = "HEAD"), cancellable = true)
-    private void sendMessage(String chatText, boolean addToHistory, CallbackInfoReturnable<Boolean> cir) {
-        MsgLock.cancelSendMessage(chatText, cir);
+    private void sendMessage(String chatText, boolean addToHistory, CallbackInfo ci) {
+        MsgLock.cancelSendMessage(chatText, ci);
     }
 
     @ModifyArg(

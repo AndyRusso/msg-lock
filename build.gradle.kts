@@ -3,7 +3,7 @@ plugins {
 
     java
     kotlin("jvm") version kotlinVersion
-    id("fabric-loom") version "1.0.+"
+    id("fabric-loom") version "1.7-SNAPSHOT"
 }
 
 group = "io.github.andyrusso"
@@ -36,7 +36,7 @@ dependencies {
 
 kotlin {
     jvmToolchain {
-        (this as JavaToolchainSpec).languageVersion.set(JavaLanguageVersion.of(17))
+        (this as JavaToolchainSpec).languageVersion.set(JavaLanguageVersion.of(21))
     }
 }
 
